@@ -1,6 +1,9 @@
 package com.lzj.account.controller;
 
 
+import com.lzj.account.api.AccountApi;
+import com.lzj.account.service.IAccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/account")
-public class AccountController {
+public class AccountController implements AccountApi {
 
+    @Autowired
+    IAccountService accountService;
+
+    @Override
+    public void debit(String userId, int money) {
+
+    }
 }
 

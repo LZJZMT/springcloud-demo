@@ -2,7 +2,6 @@ package com.lzj.account.api;
 
 public interface AccountApi {
 
-    addOrder(String itemId,)
-
+    void debit(String userId, int money);
 
 }
