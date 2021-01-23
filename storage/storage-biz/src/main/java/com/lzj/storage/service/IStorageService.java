@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IStorageService extends IService<StorageEntity> {
 
+    void debuct(String commodityCode, int count);
 }

@@ -3,6 +3,8 @@ package com.lzj.account.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lzj.account.entity.AccountEntity;
 
+import java.math.BigDecimal;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import com.lzj.account.entity.AccountEntity;
  */
 public interface IAccountService extends IService<AccountEntity> {
 
+    void debit(String userId, BigDecimal money);
 }

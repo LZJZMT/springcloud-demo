@@ -3,6 +3,8 @@ package com.lzj.order.service;
 import com.lzj.order.entity.OrderEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.math.BigDecimal;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IOrderService extends IService<OrderEntity> {
 
+    OrderEntity createOrder(String userId, String commodityCode, int count, BigDecimal price);
 }

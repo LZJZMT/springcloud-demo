@@ -9,3 +9,9 @@ spring:
         server-addr: 127.0.0.1:8848
       discovery:
         server-addr: 127.0.0.1:8848
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://42.192.39.29:3366/sc_test
+    username: root
+    password: admin
