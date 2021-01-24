@@ -7,11 +7,13 @@ spring:
     nacos:
       config:
         server-addr: 127.0.0.1:8848
+        file-extension: YAML
+        namespace: 80bec78c-0a7f-42e9-b3c7-618993f08061
+        prefix: ${spring.application.name}
+        shared-configs:
+          - refresh: true
+            dataId: common-config.yaml
+
       discovery:
         server-addr: 127.0.0.1:8848
-
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://42.192.39.29:3366/sc_test
-    username: root
-    password: admin
+        namespace: 80bec78c-0a7f-42e9-b3c7-618993f08061
