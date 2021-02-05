@@ -6,7 +6,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: yun:8848
         file-extension: YAML
         namespace: 80bec78c-0a7f-42e9-b3c7-618993f08061
         prefix: ${spring.application.name}
@@ -15,5 +15,5 @@ spring:
             dataId: common-config.yaml
 
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: yun:8848
         namespace: 80bec78c-0a7f-42e9-b3c7-618993f08061
