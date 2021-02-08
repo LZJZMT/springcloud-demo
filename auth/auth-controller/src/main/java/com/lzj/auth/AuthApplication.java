@@ -1,20 +1,26 @@
-package com.lzj.account;
+package com.lzj.auth;
 
-
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * @Description:
+ * @Author: lzj
+ * @Date： 2021/2/7 11:33
+ */
+
+
+@EnableConfigurationProperties
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
-@MapperScan("com.lzj.account.dao")
-@ComponentScan("com.lzj")
-public class AccountApplication {
+@ComponentScan(basePackages = "com.lzj")
+public class AuthApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(AccountApplication.class, args);
+        SpringApplication.run(AuthApplication.class, args);
     }
+
 }

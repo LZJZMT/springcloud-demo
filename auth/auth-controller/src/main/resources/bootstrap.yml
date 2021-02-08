@@ -1,13 +1,13 @@
 server:
-  port: 9001
+  port: 9004
 spring:
   application:
-    name: account-service
+    name: auth-service
   cloud:
     nacos:
       config:
         server-addr: yun:8848
-        file-extension: YAML
+        file-extension: yaml
         namespace: 80bec78c-0a7f-42e9-b3c7-618993f08061
         prefix: ${spring.application.name}
         shared-configs:

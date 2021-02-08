@@ -1,7 +1,0 @@
-spring:
-  redis:
-    host: yun
-    port: 6379
-    lettuce:
-      pool:
-        max-active: 100
