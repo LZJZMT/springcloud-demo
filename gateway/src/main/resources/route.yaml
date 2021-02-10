@@ -21,3 +21,7 @@ spring:
           args:
             name: fallbackcmd
             fallbackUri: forward:/fallback
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

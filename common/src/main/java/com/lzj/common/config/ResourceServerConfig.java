@@ -2,6 +2,7 @@ package com.lzj.common.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +16,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.util.FileCopyUtils;
+import sun.tools.jstat.Token;
 
 import java.io.IOException;
 
@@ -24,13 +26,15 @@ import java.io.IOException;
 @Slf4j
 @Configuration
 @EnableResourceServer
+@ConditionalOnClass(ResourceServerConfigurerAdapter.class)
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     private static final String[] ANT_MATCHERS = {"/actuator/**", "/v2/api-docs-ext"};
-    
+
     @Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(jwtAccessTokenConverter());
     }
+
 
     @ConditionalOnMissingBean(JwtAccessTokenConverter.class)
     @Bean

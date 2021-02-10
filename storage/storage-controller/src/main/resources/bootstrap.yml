@@ -2,12 +2,12 @@ server:
   port: 9003
 spring:
   application:
-    name: STORAGE-SERVICE
+    name: storage-service
   cloud:
     nacos:
       config:
         server-addr: yun:8848
-        file-extension: YAML
+        file-extension: yaml
         namespace: 80bec78c-0a7f-42e9-b3c7-618993f08061
         prefix: ${spring.application.name}
         shared-configs:
